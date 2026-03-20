@@ -1,0 +1,29 @@
+.cell {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  &__plus-button {
+    border-radius: 23px;
+    padding: 4px;
+    width: 52px;
+    height: 27px;
+    background: #242edb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__plus-icon {
+    width: 24px;
+    height: 24px;
+    color: #fff;
+  }
+
+  &__more {
+    display: block;
+    width: 26px;
+    height: 26px;
+    color: #b2b3b9;
+  }
+}

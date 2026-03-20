@@ -1,0 +1,49 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__label {
+    font-family: var(--third-family);
+    font-weight: 500;
+    font-size: 18px;
+    color: #232323;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+  }
+
+  &__error {
+    font-family: var(--third-family);
+    font-weight: 400;
+    font-size: 15px;
+    color: red;
+  }
+
+  &__remember {
+    padding: 5px 0;
+  }
+
+  &__submit {
+    border: 1px solid #367aff;
+    padding: 16px 8px;
+    height: 54px;
+    border-radius: 12px;
+    box-shadow:
+      inset 0px -2px 0px 0px rgba(0, 0, 0, 0.08),
+      0px 8px 8px 0px rgba(54, 122, 255, 0.03);
+    background: linear-gradient(0deg, #ffffff00 0%, #ffffff1f 100%), #242edb;
+
+    font-family: var(--third-family);
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+  }
+}
