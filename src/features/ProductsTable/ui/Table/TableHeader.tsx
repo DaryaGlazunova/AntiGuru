@@ -10,10 +10,11 @@ import styles from "./TableHeader.module.scss";
 
 type Props = {
   sort: SortType;
+  ref: React.RefObject<HTMLTableSectionElement | null>;
   onSort: SortChangeType;
 };
 
-function TableHeader({ sort, onSort }: Props): JSX.Element {
+function TableHeader({ ref, sort, onSort }: Props): JSX.Element {
   const handleHeaderClick = (key: HeaderKeyType) => () => {
     if (SORTABLE_KEYS.includes(key as SotableColumns)) {
       onSort(key as SotableColumns);
@@ -21,7 +22,7 @@ function TableHeader({ sort, onSort }: Props): JSX.Element {
   };
 
   return (
-    <thead className={styles["header"]}>
+    <thead ref={ref} className={styles["header"]}>
       <tr>
         {TABLE_HEADERS.map((header) => (
           <th

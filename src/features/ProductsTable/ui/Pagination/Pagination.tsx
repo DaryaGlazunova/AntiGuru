@@ -1,21 +1,19 @@
 import { memo, type JSX } from "react";
 import cn from "classnames";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { PRODUCTS_PER_PAGE } from "../constants";
 import styles from "./Pagination.module.scss";
 
 type Props = {
-  productsLength: number;
+  totalPages: number;
   currentPage: number;
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 };
 
 function Pagination({
-  productsLength,
+  totalPages,
   currentPage,
   setCurrentPage,
 }: Props): JSX.Element {
-  const totalPages = Math.ceil(productsLength / PRODUCTS_PER_PAGE);
   const numbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   const handlePrevClick = () => {

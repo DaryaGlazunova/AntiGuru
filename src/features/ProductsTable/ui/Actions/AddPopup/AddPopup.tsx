@@ -16,10 +16,7 @@ function AddPopup({ onAddClick }: Props): JSX.Element {
   const handleInputChange =
     (field: keyof ProductType) =>
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      const value =
-        field === "price" ? Number(event.target.value) : event.target.value;
-
-      setNewProductData((prev) => ({ ...prev, [field]: value }));
+      setNewProductData((prev) => ({ ...prev, [field]: event.target.value }));
     };
 
   const handleAddButtonClick = () => {
@@ -29,6 +26,7 @@ function AddPopup({ onAddClick }: Props): JSX.Element {
 
   return (
     <div className={styles["popup"]}>
+      <div className={styles["popup__title"]}>Добавление элемента</div>
       <TextField
         id="outlined-basic"
         label="Наименование"

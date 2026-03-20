@@ -14,11 +14,10 @@ export const TABLE_HEADERS: {
 ];
 
 export const SKELETON_ROWS_COUNT = 5;
-export const SKELETON_HEIGHT = 70;
 
 export const COLUMN_WIDTH: Record<HeaderKeyType, string> = {
-  checkbox: "30",
-  title: "160",
+  checkbox: "24",
+  title: "145",
   brand: "125",
   sku: "125",
   price: "125",

@@ -1,4 +1,12 @@
 .popup {
+  &__title {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.71px;
+    color: #333;
+  }
+
   position: fixed;
   width: 400px;
   top: 50%;
@@ -9,8 +17,6 @@
   gap: 20px;
   padding: 50px 30px;
   border-radius: 10px;
-  background-color: #fff;
-  box-shadow:
-    inset 0px -2px 0px 0px rgba(0, 0, 0, 0.08),
-    0px 8px 8px 0px rgba(54, 122, 255, 0.03);
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
