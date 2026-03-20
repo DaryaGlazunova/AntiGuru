@@ -7,11 +7,13 @@ import { SearchProducts } from "./SearchProducts/SearchProducts";
 import { PRODUCTS_PER_PAGE } from "./constants";
 import styles from "./ProductsTable.module.scss";
 import { Actions } from "./Actions/Actions";
-import type { SortType, SotableColumns } from "./types";
+import type { SortType, SortOrderType, SotableColumns } from "./types";
+import { useSearchParams } from "react-router-dom";
 
 export const ProductsTable = observer(() => {
   const [currentPage, setCurrentPage] = useState(1);
   const [sort, setSort] = useState<SortType>(null);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const { products, isLoading, productsAmount, getProducts } =
     useProductsStore();
@@ -37,17 +39,32 @@ export const ProductsTable = observer(() => {
     return sortedProducts.slice(firstIndex, lastIndex);
   }, [firstIndex, lastIndex, products, sort]);
 
-  const handleSortChange = useCallback((key: SotableColumns) => {
-    setSort((prev) => {
-      if (!prev || prev.key !== key) {
-        return { key, order: "asc" };
-      }
+  const handleSortChange = useCallback(
+    (key: SotableColumns) => {
+      setSort((prev) => {
+        let newOrder: SortOrderType = null;
 
-      if (prev.order === "asc") return { key, order: "desc" };
+        if (!prev || prev.key !== key) {
+          newOrder = "asc";
+        } else {
+          newOrder = prev?.order === "asc" ? "desc" : "asc";
+        }
 
-      return { key, order: "asc" };
-    });
-  }, []);
+        setSearchParams({ sort: key, order: newOrder });
+        return { key, order: newOrder };
+      });
+    },
+    [setSearchParams],
+  );
+
+  useEffect(() => {
+    const key = searchParams.get("sort") as SotableColumns | null;
+    const order = searchParams.get("order") as SortOrderType | null;
+
+    if (key && order) {
+      setSort({ key, order });
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     getProducts();

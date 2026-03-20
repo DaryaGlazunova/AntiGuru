@@ -12,10 +12,10 @@ export const AppRouter = observer(() => {
       <Routes>
         <Route
           path="/login"
-          element={!isAuth ? <Login /> : <Navigate to="/" />}
+          element={!isAuth ? <Login /> : <Navigate to="/products" />}
         />
         <Route
-          path="/"
+          path="/products"
           element={isAuth ? <Products /> : <Navigate to="/login" />}
         />
       </Routes>
