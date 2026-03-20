@@ -36,6 +36,7 @@ export const CheckboxCell = observer(({ product }: Props) => {
       <Checkbox
         className={styles["cell__input"]}
         checked={isSelected}
+        disabled={false}
         onChange={handleSelectedChange}
       />
     </div>

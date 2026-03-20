@@ -21,12 +21,12 @@ function Checkbox({
 
   return (
     <div
-      className={cn(styles["checkbox"], {
+      className={cn(styles["checkbox"], className, {
         [styles["checkbox_checked"]]: checked,
       })}
     >
       <input
-        className={cn(styles["checkbox__input"], className)}
+        className={cn(styles["checkbox__input"])}
         type="checkbox"
         checked={checked}
         disabled={disabled}
