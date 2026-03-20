@@ -7,6 +7,7 @@ import type { ChangeInputType } from "./types";
 import { Input } from "./Input";
 import { RememberCheckbox } from "./RememberCheckbox";
 import styles from "./AuthForm.module.scss";
+import { CircularProgress } from "@mui/material";
 
 export const AuthForm = observer(() => {
   const [formData, setFormData] = useState<AuthOptionsType>({
@@ -19,7 +20,7 @@ export const AuthForm = observer(() => {
     password?: string;
   } | null>(null);
 
-  const { login } = useAuthStore();
+  const { login, isLoading } = useAuthStore();
 
   const handleInputChange: ChangeInputType = useCallback(
     ({ name, value, type, checked }) => {
@@ -96,7 +97,11 @@ export const AuthForm = observer(() => {
         type="button"
         onClick={handleSubmit}
       >
-        Войти
+        {isLoading ? (
+          <CircularProgress className={styles["form__loader"]} />
+        ) : (
+          "Войти"
+        )}
       </button>
     </form>
   );

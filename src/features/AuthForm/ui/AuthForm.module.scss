@@ -30,6 +30,9 @@
   }
 
   &__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid #367aff;
     padding: 16px 8px;
     height: 54px;
@@ -45,5 +48,10 @@
     color: #fff;
     line-height: 120%;
     letter-spacing: -0.01em;
+  }
+
+  &__loader {
+    width: 20px;
+    height: 20px;
   }
 }
