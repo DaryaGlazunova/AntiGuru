@@ -12,6 +12,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &:hover {
+      background: #1d24b1;
+    }
   }
 
   &__plus-icon {
@@ -25,5 +29,9 @@
     width: 26px;
     height: 26px;
     color: #b2b3b9;
+
+    &:hover {
+      color: #808084;
+    }
   }
 }

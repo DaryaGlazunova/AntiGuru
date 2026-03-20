@@ -13,6 +13,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &:hover {
+      background: #dbdbdb;
+    }
   }
 
   &__reload-icon {
@@ -34,6 +38,10 @@
     font-weight: 600;
     font-size: 14px;
     color: #ebf3ea;
+
+    &:hover {
+      background: #1d24b1;
+    }
   }
 
   &__add-icon {
