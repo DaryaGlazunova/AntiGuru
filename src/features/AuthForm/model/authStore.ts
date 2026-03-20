@@ -7,6 +7,7 @@ import {
 } from "mobx";
 import type { AuthOptionsType } from "@features/AuthForm/lib/types";
 import { fetchLogin } from "./authApi";
+import { ACCESS_TOKEN } from "./constants";
 
 export class AuthStore {
   accessToken: string | null = null;
@@ -29,8 +30,8 @@ export class AuthStore {
 
   initAuth() {
     const accessToken =
-      localStorage.getItem("accessToken") ||
-      sessionStorage.getItem("accessToken");
+      localStorage.getItem(ACCESS_TOKEN) ||
+      sessionStorage.getItem(ACCESS_TOKEN);
 
     if (accessToken) {
       this.accessToken = accessToken;
@@ -53,9 +54,9 @@ export class AuthStore {
 
         // TODO: add to HTTP-only cookies
         if (options.remember) {
-          localStorage.setItem("accessToken", data.accessToken);
+          localStorage.setItem(ACCESS_TOKEN, data.accessToken);
         } else {
-          sessionStorage.setItem("accessToken", data.accessToken);
+          sessionStorage.setItem(ACCESS_TOKEN, data.accessToken);
         }
       });
     } catch (error) {
