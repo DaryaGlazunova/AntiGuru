@@ -28,7 +28,9 @@ export class AuthStore {
   }
 
   initAuth() {
-    const accessToken = localStorage.getItem("accessToken");
+    const accessToken =
+      localStorage.getItem("accessToken") ||
+      sessionStorage.getItem("accessToken");
 
     if (accessToken) {
       this.accessToken = accessToken;
@@ -52,6 +54,8 @@ export class AuthStore {
         // TODO: add to HTTP-only cookies
         if (options.remember) {
           localStorage.setItem("accessToken", data.accessToken);
+        } else {
+          sessionStorage.setItem("accessToken", data.accessToken);
         }
       });
     } catch (error) {
