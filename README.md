@@ -1,3 +1,3 @@
 # AntiGuru
 
-AntiGuru тестовое задание
+https://aitigurutest.netlify.app/
