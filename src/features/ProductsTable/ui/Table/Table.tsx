@@ -1,16 +1,16 @@
 import { memo, type JSX } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import type { ProductType } from "@features/ProductsTable/model/types";
+import type { ProductType } from "@features/ProductsTable/lib/types";
+import type { SortChangeType, SortType } from "../types";
 import { TableRow } from "./TableRow";
-import styles from "./Table.module.scss";
 import TableHeader from "./TableHeader";
 import {
   SKELETON_HEIGHT,
   SKELETON_ROWS_COUNT,
   TABLE_HEADERS,
 } from "./constants";
-import type { SortChangeType, SortType } from "../types";
+import styles from "./Table.module.scss";
 
 type Props = {
   products: ProductType[];

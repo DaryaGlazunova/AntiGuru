@@ -8,9 +8,3 @@ export type AuthDataType = {
   accessToken: string;
   refreshToken: string;
 };
-
-export type AuthOptionsType = {
-  username: string;
-  password: string;
-  remember: boolean;
-};

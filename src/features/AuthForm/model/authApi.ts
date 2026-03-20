@@ -1,7 +1,5 @@
-import type {
-  AuthDataType,
-  AuthOptionsType,
-} from "@features/AuthForm/model/types";
+import type { AuthDataType } from "@features/AuthForm/model/types";
+import type { AuthOptionsType } from "@features/AuthForm/lib/types";
 
 export async function fetchLogin({
   username,

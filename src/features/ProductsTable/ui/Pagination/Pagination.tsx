@@ -1,8 +1,8 @@
 import { memo, type JSX } from "react";
 import cn from "classnames";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import styles from "./Pagination.module.scss";
 import { PRODUCTS_PER_PAGE } from "../constants";
+import styles from "./Pagination.module.scss";
 
 type Props = {
   productsLength: number;

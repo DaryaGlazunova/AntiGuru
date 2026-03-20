@@ -1,4 +1,4 @@
-import type { JSX } from "react";
+import { memo, type JSX } from "react";
 import styles from "./RatingCell.module.scss";
 
 type Props = {
@@ -13,7 +13,7 @@ function RatingCell({ rating }: Props): JSX.Element {
 
   return (
     <div>
-      <span className={isMinRating ? styles["bad-rating"] : undefined}>
+      <span className={isMinRating ? styles["low-rating"] : undefined}>
         {rating}
       </span>
       {`/${MAX_RATING}`}
@@ -21,4 +21,4 @@ function RatingCell({ rating }: Props): JSX.Element {
   );
 }
 
-export default RatingCell;
+export default memo(RatingCell);

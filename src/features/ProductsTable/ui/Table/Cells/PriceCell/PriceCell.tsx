@@ -1,6 +1,6 @@
-import type { JSX } from "react";
-import styles from "./PriceCell.module.scss";
+import { memo, type JSX } from "react";
 import { formatPrice } from "./helpers";
+import styles from "./PriceCell.module.scss";
 
 type Props = {
   price: number;
@@ -19,4 +19,4 @@ function PriceCell({ price }: Props): JSX.Element {
   );
 }
 
-export default PriceCell;
+export default memo(PriceCell);

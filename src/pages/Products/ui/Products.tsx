@@ -1,13 +1,8 @@
-import type { JSX } from "react";
-import styles from "./Products.module.scss";
+import { memo, type JSX } from "react";
 import { ProductsTable } from "@features/ProductsTable/ui/ProductsTable";
 
 function Products(): JSX.Element {
-  return (
-    <div className={styles["products"]}>
-      <ProductsTable />
-    </div>
-  );
+  return <ProductsTable />;
 }
 
-export default Products;
+export default memo(Products);

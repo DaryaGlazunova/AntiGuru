@@ -2,11 +2,11 @@ import { memo, type JSX } from "react";
 import cn from "classnames";
 import Checkbox from "@shared/ui/Checkbox/Checkbox";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
-import { COLUMN_WIDTH, TABLE_HEADERS } from "./constants";
-import styles from "./TableHeader.module.scss";
 import type { SortChangeType, SortType, SotableColumns } from "../types";
 import { SORTABLE_KEYS } from "../constants";
 import type { HeaderKeyType } from "./types";
+import { COLUMN_WIDTH, TABLE_HEADERS } from "./constants";
+import styles from "./TableHeader.module.scss";
 
 type Props = {
   sort: SortType;
@@ -31,6 +31,9 @@ function TableHeader({ sort, onSort }: Props): JSX.Element {
             <div
               className={cn(styles["header__cell"], {
                 [styles["header__cell_left-align"]]: header.key === "title",
+                [styles["header__cell_with-sort"]]: SORTABLE_KEYS.includes(
+                  header.key as SotableColumns,
+                ),
               })}
               onClick={handleHeaderClick(header.key)}
             >

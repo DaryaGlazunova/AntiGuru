@@ -1,7 +1,8 @@
 import { useMemo, type JSX } from "react";
+import { observer } from "mobx-react-lite";
 import cn from "classnames";
-import type { ProductType } from "@features/ProductsTable/model/types";
-import styles from "./TableRow.module.scss";
+import { useProductsStore } from "@shared/hooks/useStore";
+import type { ProductType } from "@features/ProductsTable/lib/types";
 import {
   ActionsCell,
   CheckboxCell,
@@ -11,8 +12,7 @@ import {
 } from "./Cells";
 import { TABLE_HEADERS } from "./constants";
 import type { HeaderKeyType } from "./types";
-import { observer } from "mobx-react-lite";
-import { useProductsStore } from "@shared/hooks/useStore";
+import styles from "./TableRow.module.scss";
 
 type Props = {
   rowData: ProductType;

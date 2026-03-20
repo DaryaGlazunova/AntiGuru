@@ -1,11 +1,10 @@
-import type { ChangeEvent, JSX } from "react";
+import { memo, type ChangeEvent, type JSX } from "react";
 import {
   MdOutlineCheckBoxOutlineBlank,
   MdOutlineCheckBox,
 } from "react-icons/md";
-
-import { AUTH_FIELD } from "@features/AuthForm/lib/constants";
-import type { ChangeInputType } from "@features/AuthForm/lib/types";
+import { AUTH_FIELD } from "@features/AuthForm/ui/constants";
+import type { ChangeInputType } from "@features/AuthForm/ui/types";
 import styles from "./RememberCheckbox.module.scss";
 
 type Props = {
@@ -42,4 +41,4 @@ function RememberCheckbox({ checked, onChange }: Props): JSX.Element {
   );
 }
 
-export default RememberCheckbox;
+export default memo(RememberCheckbox);

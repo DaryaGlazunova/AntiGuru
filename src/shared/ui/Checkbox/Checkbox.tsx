@@ -3,12 +3,18 @@ import cn from "classnames";
 import styles from "./Checkbox.module.scss";
 
 type Props = {
+  className?: string;
   checked: boolean;
   disabled?: boolean;
   onChange?: (checked: boolean) => void;
 };
 
-function Checkbox({ checked, disabled, onChange }: Props): JSX.Element {
+function Checkbox({
+  className,
+  checked,
+  disabled,
+  onChange,
+}: Props): JSX.Element {
   const handleClick = (event: ChangeEvent<HTMLInputElement>) => {
     onChange?.(event.target.checked);
   };
@@ -20,7 +26,7 @@ function Checkbox({ checked, disabled, onChange }: Props): JSX.Element {
       })}
     >
       <input
-        className={styles["checkbox__input"]}
+        className={cn(styles["checkbox__input"], className)}
         type="checkbox"
         checked={checked}
         disabled={disabled}

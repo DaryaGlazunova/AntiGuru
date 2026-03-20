@@ -11,6 +11,10 @@
     align-items: center;
     justify-content: center;
 
+    &_with-sort {
+      cursor: pointer;
+    }
+
     &_left-align {
       justify-content: flex-start;
     }

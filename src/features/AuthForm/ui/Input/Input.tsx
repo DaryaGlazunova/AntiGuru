@@ -3,8 +3,8 @@ import { LuEye, LuEyeOff } from "react-icons/lu";
 import { LuUser } from "react-icons/lu";
 import { LuLock } from "react-icons/lu";
 import { RxCross1 } from "react-icons/rx";
-import { AUTH_FIELD } from "@features/AuthForm/lib/constants";
-import type { ChangeInputType } from "@features/AuthForm/lib/types";
+import { AUTH_FIELD } from "@features/AuthForm/ui/constants";
+import type { ChangeInputType } from "@features/AuthForm/ui/types";
 import styles from "./Input.module.scss";
 
 type Props = {

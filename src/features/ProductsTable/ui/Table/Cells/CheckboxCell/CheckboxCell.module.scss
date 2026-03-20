@@ -1,4 +1,8 @@
 .cell {
   padding: 0 18px;
   max-width: min-content;
+
+  &__input {
+    cursor: pointer;
+  }
 }

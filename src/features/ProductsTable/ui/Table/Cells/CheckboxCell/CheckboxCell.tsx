@@ -1,9 +1,9 @@
+import { useCallback, useMemo } from "react";
+import { observer } from "mobx-react-lite";
+import type { ProductType } from "@features/ProductsTable/lib/types";
+import { useProductsStore } from "@shared/hooks/useStore";
 import Checkbox from "@shared/ui/Checkbox/Checkbox";
 import styles from "./CheckboxCell.module.scss";
-import { observer } from "mobx-react-lite";
-import { useCallback, useMemo } from "react";
-import type { ProductType } from "@features/ProductsTable/model/types";
-import { useProductsStore } from "@shared/hooks/useStore";
 
 type Props = {
   product: ProductType;
@@ -33,7 +33,11 @@ export const CheckboxCell = observer(({ product }: Props) => {
 
   return (
     <div className={styles["cell"]}>
-      <Checkbox checked={isSelected} onChange={handleSelectedChange} />
+      <Checkbox
+        className={styles["cell__input"]}
+        checked={isSelected}
+        onChange={handleSelectedChange}
+      />
     </div>
   );
 });

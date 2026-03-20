@@ -1,14 +1,12 @@
 import { useCallback, useState } from "react";
 import { observer } from "mobx-react-lite";
 import { useAuthStore } from "@shared/hooks/useStore";
-import { AUTH_FIELD, LOGIN_FORM_ID } from "../lib/constants";
-import type { ChangeInputType } from "../lib/types";
-import type { AuthOptionsType } from "../model/types";
+import type { AuthOptionsType } from "@features/AuthForm/lib/types";
+import { AUTH_FIELD, ERROR_TEXT, LOGIN_FORM_ID } from "./constants";
+import type { ChangeInputType } from "./types";
 import { Input } from "./Input";
 import { RememberCheckbox } from "./RememberCheckbox";
 import styles from "./AuthForm.module.scss";
-
-const ERROR_TEXT = "Поле обязательно к заполнению";
 
 export const AuthForm = observer(() => {
   const [formData, setFormData] = useState<AuthOptionsType>({
@@ -20,6 +18,7 @@ export const AuthForm = observer(() => {
     username?: string;
     password?: string;
   } | null>(null);
+
   const { login } = useAuthStore();
 
   const handleInputChange: ChangeInputType = useCallback(

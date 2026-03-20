@@ -5,8 +5,8 @@ import {
   observable,
   runInAction,
 } from "mobx";
+import type { AuthOptionsType } from "@features/AuthForm/lib/types";
 import { fetchLogin } from "./authApi";
-import type { AuthOptionsType } from "./types";
 
 export class AuthStore {
   accessToken: string | null = null;
@@ -49,7 +49,7 @@ export class AuthStore {
       runInAction(() => {
         this.accessToken = data?.accessToken;
 
-        // TODO: add to HTTP-only cookie
+        // TODO: add to HTTP-only cookies
         if (options.remember) {
           localStorage.setItem("accessToken", data.accessToken);
         }

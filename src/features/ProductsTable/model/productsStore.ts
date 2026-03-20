@@ -5,7 +5,7 @@ import {
   observable,
   runInAction,
 } from "mobx";
-import type { ProductType } from "./types";
+import type { ProductType } from "@features/ProductsTable/lib/types";
 import { fetchProducts } from "./productsApi";
 
 export class ProductsStore {

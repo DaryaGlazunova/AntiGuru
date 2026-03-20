@@ -1,4 +1,4 @@
-import type { ProductType } from "./types";
+import type { ProductType } from "@features/ProductsTable/lib/types";
 
 export async function fetchProducts(
   searchValue?: string,

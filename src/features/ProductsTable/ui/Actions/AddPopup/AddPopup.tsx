@@ -1,18 +1,12 @@
-import { useState, type JSX } from "react";
+import { memo, useState, type JSX } from "react";
 import { TextField, Button } from "@mui/material";
+import type { ProductType } from "@features/ProductsTable/lib/types";
+import type { PartialProductType } from "./types";
+import { INITIAL_DATA } from "./constants";
 import styles from "./AddPopup.module.scss";
-import type { ProductType } from "@features/ProductsTable/model/types";
-import type { PartialProductType } from "../types";
 
 type Props = {
-  onAddClick: (data: PartialProductType) => void;
-};
-
-const INITIAL_DATA = {
-  title: "",
-  price: 0,
-  brand: "",
-  sku: "",
+  onAddClick: (data: Partial<ProductType>) => void;
 };
 
 function AddPopup({ onAddClick }: Props): JSX.Element {
@@ -68,4 +62,4 @@ function AddPopup({ onAddClick }: Props): JSX.Element {
   );
 }
 
-export default AddPopup;
+export default memo(AddPopup);

@@ -1,4 +1,4 @@
-import type { JSX } from "react";
+import { memo, type JSX } from "react";
 import { capitalize } from "@shared/helpers/text";
 import styles from "./NameCell.module.scss";
 
@@ -19,4 +19,4 @@ function NameCell({ title, category }: Props): JSX.Element {
   );
 }
 
-export default NameCell;
+export default memo(NameCell);

@@ -1,4 +1,4 @@
-import type { ProductType } from "../model/types";
+import type { ProductType } from "@features/ProductsTable/lib/types";
 
 export type SortOrderType = "asc" | "desc" | null;
 export type SotableColumns = Extract<keyof ProductType, "price" | "rating">;

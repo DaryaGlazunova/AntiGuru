@@ -1,14 +1,14 @@
-import { observer } from "mobx-react-lite";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useProductsStore } from "@shared/hooks/useStore";
-import Table from "./Table/Table";
-import Pagination from "./Pagination/Pagination";
-import { SearchProducts } from "./SearchProducts/SearchProducts";
-import { PRODUCTS_PER_PAGE } from "./constants";
-import styles from "./ProductsTable.module.scss";
-import { Actions } from "./Actions/Actions";
-import type { SortType, SortOrderType, SotableColumns } from "./types";
 import { useSearchParams } from "react-router-dom";
+import { observer } from "mobx-react-lite";
+import { useProductsStore } from "@shared/hooks/useStore";
+import { Table } from "./Table";
+import { Pagination } from "./Pagination";
+import { SearchProducts } from "./SearchProducts";
+import { Actions } from "./Actions";
+import { PRODUCTS_PER_PAGE } from "./constants";
+import type { SortType, SortOrderType, SotableColumns } from "./types";
+import styles from "./ProductsTable.module.scss";
 
 export const ProductsTable = observer(() => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -36,6 +36,7 @@ export const ProductsTable = observer(() => {
         return sort.order === "asc" ? valA - valB : valB - valA;
       });
     }
+
     return sortedProducts.slice(firstIndex, lastIndex);
   }, [firstIndex, lastIndex, products, sort]);
 

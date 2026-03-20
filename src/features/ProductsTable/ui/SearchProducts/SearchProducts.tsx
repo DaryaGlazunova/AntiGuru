@@ -9,6 +9,7 @@ const DEBOUNCE_DELAY = 500;
 
 export const SearchProducts = observer(() => {
   const [localSearchInput, setLocalSearchInput] = useState("");
+
   const { getProducts } = useProductsStore();
 
   const handleSearchChange = useCallback(

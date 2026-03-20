@@ -5,3 +5,5 @@ export const AUTH_FIELD = {
   password: "password",
   remember: "remember",
 } as const;
+
+export const ERROR_TEXT = "Поле обязательно к заполнению";

@@ -17,13 +17,13 @@ export const SKELETON_ROWS_COUNT = 5;
 export const SKELETON_HEIGHT = 70;
 
 export const COLUMN_WIDTH: Record<HeaderKeyType, string> = {
-  checkbox: "32",
-  title: "300",
+  checkbox: "30",
+  title: "160",
   brand: "125",
   sku: "125",
   price: "125",
   rating: "125",
-  actions: "133",
+  actions: "100",
 };
 
 export const SORTABLE_COLUMNS = ["price", "rating"];
